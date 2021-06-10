@@ -1,4 +1,5 @@
-﻿using Placemybet.Models;
+﻿
+using GetNewGamesAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,15 @@ namespace GetNewGamesAPI.Controllers
             return new UserRepositorio().Retrive();
         }
 
- 
+
+        [HttpGet]
+        [ActionName("log")]
+        public bool log()
+        {
+            return new UserRepositorio().log();
+        }
+
+
         public string Get(int id)
         {
             return "value";
