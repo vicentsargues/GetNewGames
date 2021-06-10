@@ -52,11 +52,11 @@ namespace GetNewGamesAPI.Models
             return mercados;
         }
 
-        internal bool log()
+        internal bool log(string usu , string pass)
         {
             MySqlConnection con = Connect();
             MySqlCommand comand = con.CreateCommand();
-            comand.CommandText = " SELECT* FROM `users` WHERE `name` LIKE '1' AND `pasword` LIKE '1'";
+            comand.CommandText = " SELECT* FROM `users` WHERE `name` LIKE '"+usu+ "' AND `pasword` LIKE '" + pass + "'";
             try
             {
                 con.Open();
